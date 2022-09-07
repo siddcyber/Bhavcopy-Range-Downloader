@@ -1,4 +1,13 @@
 # install packages: pywin32, pandas, requests, future, tkcalendar and winshell
+
+# monday    -> friday   ->0
+# tuesday   -> monday   ->1
+# wednesday -> tuesday  ->2
+# Thursday  -> wednesday->3
+# friday    -> thursday ->4
+# saturday  -> friday   ->5
+# sunday    -> friday   ->6
+
 import os
 import requests
 from datetime import date, timedelta
@@ -10,18 +19,7 @@ from tkinter import filedialog, Label, Radiobutton, BooleanVar, Tk, Button, ttk,
 import os.path
 import pandas as pd
 import threading
-from HolidayParsing import *
-listHolidays = holidaylist().dflist
-print(listHolidays)
 
-
-# monday    -> friday   ->0
-# tuesday   -> monday   ->1
-# wednesday -> tuesday  ->2
-# Thursday  -> wednesday->3
-# friday    -> thursday ->4
-# saturday  -> friday   ->5
-# sunday    -> friday   ->6
 
 def extractAndDelete(filename, url):
     while True:
