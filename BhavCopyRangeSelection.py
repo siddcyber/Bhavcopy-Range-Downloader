@@ -108,7 +108,8 @@ def CheckOrignalFilePath():
             desktop  = winshell.desktop()
             newFolder = 'BhavCopies'
             orignalPath = os.path.join(desktop, newFolder)
-            os.mkdir(orignalPath)
+            if not os.path.exists(orignalPath):
+                os.mkdir(orignalPath)
             file.write(str(orignalPath))  # append the file with new location
     file.close()
     return orignalPath
