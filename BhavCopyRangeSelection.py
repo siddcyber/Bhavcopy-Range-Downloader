@@ -129,6 +129,8 @@ def BrowseFile():
 def confrirmAndDownload():
     #     start progressbar and progresbar status
     startDate = cal.get_date()
+    if startDate == date.today():
+        startDate = startDate - timedelta(days=1)
     # deltaDate = endDate-startDate # returns deltatime
     if not endDateCheck.get():
         endDate = calEnd.get_date()
